@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cypress": "^15.10.0"
+  },
+  "scripts": {
+    "cy:chrome:ui": "cypress run --browser chrome --config-file=./cypress.config.js --spec cypress/e2e/ui/*",
+    "cy:firefox:ui": "cypress run --browser firefox --config-file=./cypress.config.js --spec cypress/e2e/ui/*",
+    "cy:open:e2e": "cypress open --config-file=./cypress.config.js",
+    "cy:api": "cypress run --spec cypress/e2e/api/*"
+  }
+}

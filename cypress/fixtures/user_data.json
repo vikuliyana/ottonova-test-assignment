@@ -1,0 +1,25 @@
+{
+  "validUser": {
+    "income": "80000",
+    "startDate": "01.06.2026",
+    "birthdate": "01.01.1990"
+  },
+  "invalidBirthdates": [
+    {
+      "value": "01.01.2025",
+      "error": "Leider kannst du dich erst ab 18 Jahren alleine versichern."
+    },
+    {
+      "value": "99.99.9999",
+      "error": "Bitte gib ein korrektes Datum ein."
+    },
+    {
+      "value": "01.01.1900",
+      "error": "Du kannst dich nur bis 101 Jahren bei uns versichern."
+    },
+    {
+      "value": "01.01.2500",
+      "error": "Du bist in der Zukunft geboren? Bitte überprüfe deine Eingaben."
+    }
+  ]
+}
