@@ -1,6 +1,6 @@
 class assistantPage {
     // Selectors
-    get employedStatus() { return cy.get('[datacy="employment-status-option-employed"]'); }
+    get employedStatus() { return cy.get('[data-cy="employment-status-option-employed"]'); }
     get incomeInput() { return cy.get('input[data-cy="income-input"]'); }
     get fullInsuranceType() { return cy.get('[data-cy="full-insurance"]'); }
     get insuranceStartDate() { return cy.get('select[data-cy="ingress-date"]'); }
@@ -15,8 +15,17 @@ class assistantPage {
     // Actions
     acceptCookies() {
         cy.get('body').then(($body) => {
-            if ($body.find('.uc-accept-button').length > 0) {
-                cy.get('.uc-accept-button').click();
+            // Check in Shadow DOM
+            const ucRoot = $body.find('#usercentrics-cmp-ui');
+            if (ucRoot.length > 0 && ucRoot[0].shadowRoot) {
+                const shadowButton = ucRoot[0].shadowRoot.querySelector('.uc-accept-button');
+                if (shadowButton) {
+                    cy.wrap(shadowButton).click();
+                } else {
+                    cy.log('Usercentrics root found, but button not inside.');
+                }
+            } else {
+                cy.log('Cookie banner not found (neither regular nor shadow), skipping.');
             }
         });
     }
@@ -29,4 +38,5 @@ class assistantPage {
         this.birthYearInput.clear().type(year).blur();
     }
 }
+
 export default new assistantPage();
