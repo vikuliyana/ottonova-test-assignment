@@ -39,17 +39,6 @@ You can run tests using the scripts defined in `package.json`.
 | `npm run cy:firefox:ui` | Runs UI tests in Firefox browser only. |
 | `npm run cy:api` | Runs API tests only. |
 
-### Example usage:
-
-To run all UI tests in Chrome headless mode:
-```bash
-npm run cy:chrome:ui
-```
-
-To run API tests:
-```bash
-npm run cy:api
-```
 
 ## Features
 
