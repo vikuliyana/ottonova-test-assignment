@@ -42,7 +42,7 @@ You can run tests using the scripts defined in `package.json`.
 
 ## Features
 
-- **Cross-Browser Cookie Handling**: The project implements a robust cookie acceptance mechanism in `assistantPage.js` that handles timing differences across browsers (Chrome, Firefox, Electron) by waiting for the banner to be visible before interacting.
+- **Cross-Browser Cookie Handling**: The project implements a robust cookie acceptance mechanism in `assistantPage.js` that handles timing differences across browsers (Chrome, Firefox) by waiting for the banner to be visible before interacting.
 - **Page Object Model**: UI interactions are abstracted into Page Objects to improve code readability and maintainability.
 - **API Testing**: Includes tests for `GET` requests and mocking responses using `cy.intercept`.
 
