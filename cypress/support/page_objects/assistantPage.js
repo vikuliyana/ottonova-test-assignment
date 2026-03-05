@@ -14,6 +14,7 @@ class assistantPage {
 
     // Actions
     acceptCookies() {
+        cy.wait(3000); // Wait for the cookie banner to load
         cy.get('body').then(($body) => {
             // Check in Shadow DOM
             const ucRoot = $body.find('#usercentrics-cmp-ui');
